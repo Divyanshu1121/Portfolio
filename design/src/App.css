@@ -1,0 +1,36 @@
+.app-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+section {
+  position: relative;
+  padding: 60px 0;
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* DO NOT add overflow:hidden here — it breaks position:sticky in child components.
+     Sections that need clipping (e.g. Hero) set it on their own class. */
+}
+
+
+
+/* Typography styles */
+.section-title {
+  font-family: var(--font-accent);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 50px;
+  color: var(--text-primary);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--salt-mid-grey) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

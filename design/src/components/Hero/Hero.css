@@ -1,0 +1,703 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 0 0 0;
+  overflow: hidden;
+}
+
+.hero-perspective {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 70vh;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+/* Huge background text */
+.hero-bg-text {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 20vw, 15rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.06;
+  line-height: 0.8;
+  letter-spacing: -8px;
+  pointer-events: none;
+  white-space: nowrap;
+  text-align: center;
+  z-index: 1;
+  transition: transform 0.1s ease-out;
+}
+
+[data-theme="light"] .hero-bg-text {
+  opacity: 0.08;
+}
+
+/* Portrait container backlight */
+.portrait-backlight {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 170px);
+  /* Centered tighter backlight */
+  width: 340px;
+  height: 90%;
+  border-radius: 50% 50% 0 0;
+  /* Dome shape to match head/shoulders shape */
+  background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(25px);
+  /* Tighter blur for low-distance glow (very low distance) */
+  opacity: 0.6;
+  /* Lower opacity for subtle background effect */
+  transition: transform 0.15s ease-out;
+}
+
+/* 3-Column Flanking Grid Layout */
+.hero-grid-layout {
+  display: grid;
+  grid-template-columns: 1.1fr auto 1.1fr;
+  align-items: center;
+  gap: 60px;
+  width: 95%;
+  max-width: 1200px;
+  z-index: 3;
+  pointer-events: none;
+  /* Allows mouse movement to pass through to sections */
+  height: 100%;
+  min-height: 70vh;
+}
+
+.hero-left-col,
+.hero-portrait-wrapper,
+.hero-right-col {
+  pointer-events: auto;
+  /* Re-enable pointer events for buttons, images, and links */
+}
+
+/* Cardless Portrait wrapper and container */
+.hero-portrait-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: end;
+  margin-bottom: -40px;
+  /* Aligns bottom of image exactly flush with the tech scroller top line */
+}
+
+.hero-portrait-container {
+  width: 580px;
+  height: 88vh;
+  /* Sized from scroller line up to middle/top of screen */
+  max-height: 850px;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+  /* Allows image to pop out of bounds */
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="light"] .hero-portrait-container {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+
+.portrait-img {
+  position: relative;
+  z-index: 2;
+  /* Renders strictly in front of the backlight (z-index 1) */
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  transform: translateZ(30px) scale(1.02);
+  /* Popping 3D depth */
+  transform-origin: bottom center;
+  pointer-events: none;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+}
+
+[data-theme="light"] .portrait-img {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Directional hover gradients */
+
+.grad-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: opacity;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+/* Devil Red gradients (stronger) */
+.grad-top {
+  background: linear-gradient(to bottom, rgba(239, 68, 68, 0.85) 0%, transparent 80%);
+}
+
+.grad-bottom {
+  background: linear-gradient(to top, rgba(239, 68, 68, 0.85) 0%, transparent 80%);
+}
+
+.grad-left {
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.75) 0%, transparent 75%);
+}
+
+.grad-right {
+  background: linear-gradient(to left, rgba(239, 68, 68, 0.75) 0%, transparent 75%);
+}
+
+
+/* Fallback avatar if portrait image is missing */
+.avatar-fallback-content {
+  display: none;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-color), var(--salt-dark-grey));
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--card-border);
+}
+
+.portrait-frame.avatar-fallback .avatar-fallback-content {
+  display: flex;
+}
+
+.fallback-initial {
+  font-family: var(--font-accent);
+  font-size: 5rem;
+  color: var(--salt-white);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Flanking Column Styles */
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  transform: translateY(-60px);
+  /* Align horizontally with right column */
+}
+
+.hero-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  transform: translateY(-60px);
+  /* Align horizontally with left column */
+}
+
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  background: rgba(23, 77, 56, 0.2);
+  border: 1px solid rgba(23, 77, 56, 0.4);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--accent-light);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="light"] .availability-badge {
+  background: rgba(23, 77, 56, 0.08);
+}
+
+.badge-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-light);
+  display: inline-block;
+  box-shadow: 0 0 8px var(--accent-light);
+  animation: pulseBadge 1.5s infinite;
+}
+
+@keyframes pulseBadge {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+}
+
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.social-link:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-light);
+  box-shadow: 0 0 10px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+
+/* Tech Marquee Bar */
+.tech-scroller-container {
+  width: 100%;
+  margin: 40px 0 0 0;
+  overflow: hidden;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  background: rgba(13, 13, 13, 0.2);
+  padding: 18px 0;
+  z-index: 4;
+  /* Renders in front of portrait bottom edge to mask the cut line */
+}
+
+[data-theme="light"] .tech-scroller-container {
+  background: rgba(247, 247, 247, 0.4);
+}
+
+.tech-scroller {
+  display: flex;
+  width: 100%;
+}
+
+.tech-scroller-inner {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+  padding-left: 30px;
+}
+
+.tech-scroller-inner span {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Down Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  animation: bounceIndicator 2s infinite alternate;
+}
+
+.scroll-indicator:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-light);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+@keyframes bounceIndicator {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0;
+    min-height: calc(100vh - 64px) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-perspective {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .hero-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+    justify-items: center;
+    min-height: auto;
+    width: 90%;
+  }
+
+  .hero-left-col {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    transform: translateY(0) !important;
+    width: 100% !important;
+    order: 1;
+  }
+
+  
+
+  .hero-portrait-container {
+    width: 280px;
+    height: 380px;
+    min-height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .hero-right-col {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
+    transform: translateY(0) !important;
+    width: 100% !important;
+    order: 2;
+  }
+
+  .hero-socials {
+    display: flex;
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  /* Hide huge background text on mobile — too noisy */
+  .hero-bg-text {
+    display: none;
+  }
+
+  /* Hide portrait backlight glow — too heavy on mobile */
+  .portrait-backlight {
+    display: none;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-bio {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+
+  .availability-badge {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+    padding: 5px 12px;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-scroller-container {
+    margin: 20px 0 0 0;
+    padding: 12px 0;
+  }
+
+  .tech-scroller-inner span {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .tech-scroller-inner {
+    gap: 40px;
+  }
+
+  /* Hide sparkle stars on mobile */
+  .sparkle-star,
+  .bg-sparkle-star {
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-portrait-container {
+    width: 220px;
+    height: 300px;
+  }
+
+  .hero-tagline {
+    font-size: 1.3rem;
+    letter-spacing: -1px;
+  }
+
+  .hero-bio {
+    font-size: 0.82rem;
+  }
+}
+
+/* Shiny Sparkle Stars */
+.sparkle-star {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.sparkle-star svg {
+  width: 100%;
+  height: 100%;
+}
+
+.s-1 {
+  top: 15%;
+  left: -8%;
+  width: 20px;
+  height: 20px;
+  color: #ffffff;
+  animation: shinySparkle 3.5s ease-in-out infinite alternate;
+}
+
+.s-2 {
+  top: 5%;
+  right: -5%;
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  animation: shinySparkle 4.5s ease-in-out infinite alternate 1s;
+}
+
+.s-3 {
+  bottom: 22%;
+  left: -10%;
+  width: 26px;
+  height: 26px;
+  color: #ffffff;
+  animation: shinySparkle 4s ease-in-out infinite alternate 0.5s;
+}
+
+.s-4 {
+  bottom: 12%;
+  right: -8%;
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  animation: shinySparkle 5s ease-in-out infinite alternate 1.5s;
+}
+
+@keyframes shinySparkle {
+  0% {
+    transform: scale(0.3) rotate(0deg);
+    opacity: 0.1;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+
+  50% {
+    transform: scale(1) rotate(90deg);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+
+  100% {
+    transform: scale(0.3) rotate(180deg);
+    opacity: 0.1;
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+}
+
+/* Background Sparkle Stars scattered in Hero section */
+.bg-sparkle-star {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.bg-sparkle-star svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bs-1 {
+  top: 15%;
+  left: 8%;
+  width: 14px;
+  height: 14px;
+  animation: shinySparkle 4s ease-in-out infinite alternate;
+}
+
+.bs-2 {
+  top: 22%;
+  right: 12%;
+  width: 16px;
+  height: 16px;
+  animation: shinySparkle 5s ease-in-out infinite alternate 1.2s;
+}
+
+.bs-3 {
+  bottom: 25%;
+  left: 14%;
+  width: 15px;
+  height: 15px;
+  animation: shinySparkle 4.5s ease-in-out infinite alternate 0.8s;
+}
+
+.bs-4 {
+  bottom: 18%;
+  right: 8%;
+  width: 18px;
+  height: 18px;
+  animation: shinySparkle 3.8s ease-in-out infinite alternate 1.6s;
+}
+
+/* Click Slingshot Star Launcher */
+.slingshot-star {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 100;
+  transform: translate(-50%, -50%) scale(1);
+  color: #ffffff;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95));
+}
+
+.slingshot-star svg {
+  width: 100%;
+  height: 100%;
+}
+
+.slingshot-star.shooting {
+  animation: slingshotShoot 5.5s cubic-bezier(0.1, 0.9, 0.4, 1) forwards;
+}
+
+.slingshot-star.fade-out {
+  animation: slingshotFade 0.4s ease-out forwards;
+}
+
+@keyframes slingshotShoot {
+  0% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(0.4) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slingshotFade {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}

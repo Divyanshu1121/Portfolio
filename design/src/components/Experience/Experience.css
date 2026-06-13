@@ -1,0 +1,330 @@
+/* ===== Experience Section ===== */
+.experience-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: 40px 0 20px 0;
+  min-height: auto;
+  overflow: visible;
+}
+
+/* ===== Stack Cards Container ===== */
+.exp-stack-cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  /* 
+   * The gap creates scroll distance between cards.
+   * When card 1 is stuck, the user scrolls through the gap 
+   * before card 2 reaches the viewport and covers card 1.
+   */
+  gap: 80px;
+  /* Extra padding at bottom so the LAST card fully sticks before the section ends.
+     Once all cards are stacked, continued scrolling moves the entire stack off-screen. */
+  padding-bottom: 80px;
+}
+
+/* ===== Individual Stack Card ===== */
+.exp-stack-card {
+  position: sticky;
+  /* top is set via inline style: 100px, 140px, 180px, ... */
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  background: var(--card-solid-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 -4px 20px rgba(0, 0, 0, 0.15),
+    0 20px 50px rgba(0, 0, 0, 0.25);
+  transform-origin: center top; /* Scale from top center to keep the tab strip in place */
+  will-change: transform;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: transform 0.1s ease-out, border-color 0.3s ease;
+}
+
+.exp-stack-card:hover {
+  border-color: var(--accent-light);
+}
+
+/* ===== Card Header (the "tab" that stays visible when covered) ===== */
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 14px;
+  min-height: 50px;
+  flex-shrink: 0;
+}
+
+.exp-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--text-primary);
+}
+
+.exp-icon {
+  color: var(--accent-light);
+  flex-shrink: 0;
+}
+
+.exp-num {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.exp-card-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.exp-company {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* ===== Card Body ===== */
+.exp-card-body {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.exp-body-main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.exp-period,
+.exp-location {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .exp-period,
+[data-theme="light"] .exp-location {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.exp-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+.exp-accomplishments h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.exp-accomplishments ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-accomplishments li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.55;
+}
+
+.exp-accomplishments li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-light);
+  font-weight: bold;
+}
+
+/* ===== Side Panel ===== */
+.exp-body-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.exp-skills-box h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.exp-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-skill-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .exp-stack-card {
+    height: auto;
+    min-height: unset;
+    padding: 24px;
+  }
+
+  .exp-card-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .exp-company {
+    display: none;
+  }
+
+  .exp-card-header h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 20px 0 10px 0;
+  }
+
+  .exp-stack-cards {
+    gap: 24px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  /* Disable sticky stacking on mobile — normal vertical flow */
+  .exp-stack-card {
+    position: relative !important;
+    top: auto !important;
+    height: auto;
+    min-height: unset;
+    padding: 20px;
+    border-radius: 18px;
+    gap: 16px;
+    transform: none !important;
+  }
+
+  .exp-card-header {
+    min-height: 40px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .exp-header-left {
+    gap: 10px;
+  }
+
+  .exp-card-header h3 {
+    font-size: 1.05rem;
+  }
+
+  .exp-num {
+    font-size: 1rem;
+  }
+
+  .exp-card-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .exp-meta {
+    gap: 8px;
+  }
+
+  .exp-period,
+  .exp-location {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  .exp-description {
+    font-size: 0.85rem;
+  }
+
+  .exp-accomplishments li {
+    font-size: 0.85rem;
+    padding-left: 18px;
+    line-height: 1.5;
+  }
+
+  .exp-accomplishments h4 {
+    font-size: 0.85rem;
+  }
+
+  .exp-skills-box h4 {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .exp-skill-tag {
+    font-size: 0.72rem;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-stack-card {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .exp-card-header h3 {
+    font-size: 0.95rem;
+  }
+
+  .exp-company {
+    display: none;
+  }
+}
+
