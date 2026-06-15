@@ -30,7 +30,7 @@ export default function Header() {
         {/* Logo / Name */}
         <a href="#" className="logo" onClick={() => scrollToSection('hero')}>
           <span className="logo-dot"></span>
-          Arya Shah
+          Divyanshu M. Patel
         </a>
 
         {/* Desktop Navigation */}
@@ -54,8 +54,8 @@ export default function Header() {
 
           {/* View Resume Button */}
           <a 
-            href="/Resume_Arya_Shah.pdf" 
-            download="Resume_Arya_Shah.pdf" 
+            href="/divyanshu-patel-resume.pdf" 
+            download="Divyanshu-Patel-Resume.pdf" 
             className="resume-btn"
           >
             <FileText size={16} />

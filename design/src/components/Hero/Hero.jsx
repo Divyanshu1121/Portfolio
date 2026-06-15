@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Mail } from 'lucide-react';
-import aayuNoBg from '../../assets/aayu_nobg.webp';
+import avatarImg from '../../assets/avatar_cartoon.webp';
 import './Hero.css';
 
 // Custom inline SVG icons for brands (since lucide-react doesn't bundle brand logos anymore)
@@ -201,7 +201,7 @@ export default function Hero() {
       <div className="hero-perspective">
         {/* Massive Background Heading */}
         <h1 className="hero-bg-text" ref={bgTextRef}>
-          ARYA SHAH
+          DIVYANSHU PATEL
         </h1>
 
 
@@ -215,7 +215,7 @@ export default function Hero() {
               Open for AI & Software roles
             </div>
             <h2 className="hero-tagline">
-              AI Engineer <br />& Full-Stack Developer
+              Full-Stack MERN <br />& AI Developer
             </h2>
             <button 
               onClick={() => scrollToSection('contact')} 
@@ -255,8 +255,8 @@ export default function Hero() {
                 <div className="portrait-backlight" ref={glowRef}></div>
 
                 <img 
-                  src={aayuNoBg} 
-                  alt="Arya Shah Portrait" 
+                  src={avatarImg} 
+                  alt="Divyanshu M. Patel Portrait" 
                   className="portrait-img"
                   onError={(e) => {
                     e.target.style.display = 'none';
@@ -265,7 +265,7 @@ export default function Hero() {
                 />
 
                 <div className="avatar-fallback-content">
-                  <span className="fallback-initial">A</span>
+                  <span className="fallback-initial">D</span>
                 </div>
               </div>
             </div>
@@ -275,16 +275,16 @@ export default function Hero() {
           {/* Right Column: Bio & Socials */}
           <div className="hero-right-col">
             <p className="hero-bio">
-              Building robust, production-grade deep learning systems, computer vision verification pipelines, and intelligent WhatsApp automations. Graduated IT Honors in Data Science.
+              Full-Stack MERN Developer specializing in scalable web applications, SaaS platforms, and AI-powered solutions. Graduated IT Honours in Data Science.
             </p>
             <div className="hero-socials">
-              <a href="https://github.com/arya-shah22" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
+              <a href="https://github.com/Divyanshu1121" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com/in/aryashah22" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/divyanshu-patel-b6537a1b3/" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:aryashah325@gmail.com" className="social-link" aria-label="Email">
+              <a href="mailto:divyanshupatel5633@gmail.com" className="social-link" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>
@@ -297,24 +297,24 @@ export default function Hero() {
       <div className="tech-scroller-container">
         <div className="tech-scroller">
           <div className="tech-scroller-inner">
+            <span>MERN STACK</span>
+            <span>REACT</span>
+            <span>NODE.JS</span>
+            <span>MONGODB</span>
+            <span>NEXT.JS</span>
+            <span>TYPESCRIPT</span>
             <span>PYTHON</span>
             <span>TENSORFLOW</span>
-            <span>PYTORCH</span>
-            <span>FASTAPI</span>
-            <span>REACT</span>
-            <span>FLUTTER</span>
-            <span>n8n AUTOMATION</span>
-            <span>OPENCV</span>
             <span>SQL</span>
             {/* Duplicated for infinite scroll effect */}
+            <span>MERN STACK</span>
+            <span>REACT</span>
+            <span>NODE.JS</span>
+            <span>MONGODB</span>
+            <span>NEXT.JS</span>
+            <span>TYPESCRIPT</span>
             <span>PYTHON</span>
             <span>TENSORFLOW</span>
-            <span>PYTORCH</span>
-            <span>FASTAPI</span>
-            <span>REACT</span>
-            <span>FLUTTER</span>
-            <span>n8n AUTOMATION</span>
-            <span>OPENCV</span>
             <span>SQL</span>
           </div>
         </div>

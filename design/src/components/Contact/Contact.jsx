@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('aryashah325@gmail.com');
+    navigator.clipboard.writeText('divyanshupatel5633@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -73,7 +73,7 @@ export default function Contact() {
                 <div className="info-text">
                   <span>Email</span>
                   <div className="copy-email-row">
-                    <a href="mailto:aryashah325@gmail.com">aryashah325@gmail.com</a>
+                    <a href="mailto:divyanshupatel5633@gmail.com">divyanshupatel5633@gmail.com</a>
                     <button className="copy-btn" onClick={copyEmail} title="Copy Email">
                       {copied ? <Check size={14} className="success-icon" /> : <Copy size={14} />}
                     </button>
@@ -109,7 +109,7 @@ export default function Contact() {
               <div className="form-success-state">
                 <CheckCircle2 size={50} className="success-check-icon" />
                 <h3>Message Sent Successfully!</h3>
-                <p>Thank you for reaching out, Arya. I will get in touch with you shortly.</p>
+                <p>Thank you for reaching out, Divyanshu. I will get in touch with you shortly.</p>
                 <button onClick={() => setStatus('idle')} className="glow-btn">
                   Send Another Message
                 </button>
@@ -119,7 +119,7 @@ export default function Contact() {
                 {status === 'error' && (
                   <div className="form-error-banner">
                     <AlertCircle size={18} />
-                    <span>Failed to reach backend API. You can still reach me at <strong>aryashah325@gmail.com</strong>.</span>
+                    <span>Failed to reach backend API. You can still reach me at <strong>divyanshupatel5633@gmail.com</strong>.</span>
                   </div>
                 )}
 
@@ -200,7 +200,7 @@ export default function Contact() {
 
         {/* Footer info */}
         <div className="simple-footer">
-          <p>© {new Date().getFullYear()} Arya Shah. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Divyanshu M. Patel. All rights reserved.</p>
         </div>
       </div>
     </section>
