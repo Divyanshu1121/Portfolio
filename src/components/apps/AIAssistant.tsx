@@ -100,7 +100,7 @@ export default function AIAssistant() {
       }}>
         <span style={{ fontSize: '24px' }}>🤖</span>
         <div>
-          <h3 style={{ fontSize: '15px', fontWeight: 600, margin: 0 }}>ARYA-AI</h3>
+          <h3 style={{ fontSize: '15px', fontWeight: 600, margin: 0 }}>DIVYANSHU-AI</h3>
           <p style={{ fontSize: '10px', color: 'var(--text-muted)', margin: 0 }}>
             Powered by Claude API · <span style={{ color: 'var(--accent-green)' }}>● Online</span>
           </p>
@@ -138,7 +138,7 @@ export default function AIAssistant() {
             {messages.length === 0 && (
               <div style={{ textAlign: 'center', padding: '30px 10px' }}>
                 <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px' }}>
-                  Ask me anything about Arya Shah
+                  Ask me anything about Divyanshu M. Patel
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', justifyContent: 'center' }}>
                   {suggestedQuestions.map((q) => (
@@ -160,7 +160,7 @@ export default function AIAssistant() {
                 <div className={msg.role === 'user' ? 'chat-bubble-user' : 'chat-bubble-ai'}>
                   {msg.role === 'assistant' && (
                     <div style={{ fontSize: '9px', color: 'var(--accent-blue)', marginBottom: '4px', fontWeight: 600 }}>
-                      ARYA-AI
+                      DIVYANSHU-AI
                     </div>
                   )}
                   {msg.content}
@@ -185,7 +185,7 @@ export default function AIAssistant() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && sendMessage(input)}
-              placeholder="Ask about Arya..."
+              placeholder="Ask about Divyanshu..."
               className="input-field"
               style={{ flex: 1 }}
             />
@@ -239,7 +239,7 @@ export default function AIAssistant() {
 function generateLocalResponse(question: string): string {
   const q = question.toLowerCase();
   if (q.includes('cgpa') || q.includes('grade'))
-    return "My CGPA is 9.44 out of 10 from Gujarat Technological University. I'm also pursuing an Honours degree in Data Science with Grade AB.";
+    return "My CGPA is 8.14 out of 10 from C.K. Pithawala College of Engineering and Technology. I'm also pursuing an Honours degree in Data Science from Gujarat Technological University with Grade AB.";
   if (q.includes('packvision') || q.includes('packaging'))
     return "PackVision AI is my most impactful project — an end-to-end pharmaceutical packaging inspection system using computer vision. I built dual-stream defect detection with EfficientNetV2B2 + custom CNN, autoencoder anomaly detection with SSIM and VGG perceptual loss, and YOLO models for bottle localisation. Full-stack delivery included a Flutter scanning app, FastAPI backend, and ReactJS dashboard.";
   if (q.includes('strongest') || q.includes('best project'))
@@ -252,7 +252,7 @@ function generateLocalResponse(question: string): string {
     return "I'm based in Surat, Gujarat, India and I'm open to relocation, remote work, or hybrid arrangements. I'm flexible and excited to work with great teams wherever they are.";
   if (q.includes('experience') || q.includes('work'))
     return "I have experience as a Freelance Developer (current), AI/ML + SDE Intern at Upnext Software, and AI Intern at Nerdshouse Technologies. I've built production systems including ERPs, e-commerce platforms, and AI-powered automation.";
-  return "I'm Arya Shah, an AI Engineer and Full-Stack Developer with a CGPA of 9.44/10. I've built production AI systems, ERPs, and web platforms. Feel free to ask me about my projects, skills, or experience!";
+  return "I'm Divyanshu M. Patel, a Full-Stack MERN Developer with a CGPA of 8.14/10. I've built SaaS platforms, AI learning assistants, and real client websites. Feel free to ask me about my projects, skills, or experience!";
 }
 
 function generateLocalJDAnalysis(jd: string): string {

@@ -19,7 +19,7 @@ export default function Contact() {
       window.open(item.url, '_blank');
     } else if (item.action === 'copy') {
       navigator.clipboard.writeText(item.value);
-      addNotification({ title: 'AryaOS', message: '✅ Copied to clipboard!', icon: '📋' });
+      addNotification({ title: 'DivyanshuOS', message: '✅ Copied to clipboard!', icon: '📋' });
     }
   };
 
@@ -38,10 +38,10 @@ export default function Contact() {
       if (response.ok) {
         setSent(true);
         setForm({ name: '', email: '', subject: '', message: '' });
-        addNotification({ title: 'AryaOS', message: '✅ Message sent successfully!', icon: '📧' });
+        addNotification({ title: 'DivyanshuOS', message: '✅ Message sent successfully!', icon: '📧' });
       }
     } catch {
-      addNotification({ title: 'AryaOS', message: '❌ Failed to send. Try email directly.', icon: '⚠️' });
+      addNotification({ title: 'DivyanshuOS', message: '❌ Failed to send. Try email directly.', icon: '⚠️' });
     } finally {
       setSending(false);
     }
@@ -182,7 +182,7 @@ export default function Contact() {
         >
           <div style={{ fontSize: '32px', marginBottom: '8px' }}>🚀</div>
           <p style={{ fontSize: '13px', color: 'var(--text-primary)', fontWeight: 500 }}>
-            Message sent! Arya will reply within 24 hours.
+            Message sent! Divyanshu will reply within 24 hours.
           </p>
         </motion.div>
       )}

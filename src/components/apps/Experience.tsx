@@ -60,9 +60,11 @@ export default function Experience() {
               <p style={{ fontSize: '12px', color: 'var(--accent-blue)', marginTop: '2px' }}>
                 {exp.company}{exp.location ? `, ${exp.location}` : ''}
               </p>
-              <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
-                {exp.period} · {exp.duration}
-              </p>
+              {(exp.period || exp.duration) && (
+                <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px' }}>
+                  {[exp.period, exp.duration].filter(Boolean).join(' · ')}
+                </p>
+              )}
             </div>
 
             {/* Projects */}

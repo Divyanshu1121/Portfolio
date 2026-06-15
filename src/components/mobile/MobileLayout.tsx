@@ -155,7 +155,7 @@ export default function MobileLayout() {
         <div className={styles.headerLeft}>
           <div className={styles.avatar} style={{ overflow: 'hidden' }}>
             <img
-              src="/avatar_cartoon.webp"
+              src="/avatar_cartoon.jpg"
               alt="Avatar"
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
@@ -166,7 +166,7 @@ export default function MobileLayout() {
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <a href="/arya-shah-resume.pdf" download className={styles.resumeBtn}>
+          <a href="/divyanshu-patel-resume.pdf" download className={styles.resumeBtn}>
             Resume 📄
           </a>
           <button
@@ -200,7 +200,7 @@ export default function MobileLayout() {
                 <div className={`${styles.card} ${styles.heroCard}`}>
                   <div className={styles.heroAvatar} style={{ overflow: 'hidden' }}>
                     <img
-                      src="/avatar_cartoon.webp"
+                      src="/avatar_cartoon.jpg"
                       alt="Avatar"
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />

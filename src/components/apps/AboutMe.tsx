@@ -103,8 +103,8 @@ export default function AboutMe() {
         </a>
         <button className="btn-ghost" onClick={() => {
           const link = document.createElement('a');
-          link.href = '/arya-shah-resume.pdf';
-          link.download = 'Arya-Shah-Resume.pdf';
+          link.href = '/divyanshu-patel-resume.pdf';
+          link.download = 'Divyanshu-Patel-Resume.pdf';
           link.click();
         }}>
           Resume ↓

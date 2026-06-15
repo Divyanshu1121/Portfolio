@@ -45,7 +45,7 @@ export default function BootSequence() {
 
   const complete = useCallback(() => {
     if (typeof window !== 'undefined') {
-      sessionStorage.setItem('aryaos-booted', 'true');
+      sessionStorage.setItem('divyanshuos-booted', 'true');
     }
     setBootComplete();
   }, [setBootComplete]);
@@ -189,7 +189,7 @@ export default function BootSequence() {
         }}
       >
         <img
-          src="/avatar_cartoon.webp"
+          src="/avatar_cartoon.jpg"
           alt="Avatar"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
@@ -202,7 +202,7 @@ export default function BootSequence() {
     ? 'Windows 11 — Portfolio Edition'
     : activeOS === 'ubuntu'
     ? 'Ubuntu 24.04 LTS — Portfolio Edition'
-    : 'AryaOS v2.0 — AI Developer Edition';
+    : 'DivyanshuOS v2.0 — AI Developer Edition';
 
   // Render progress indicator per OS
   const renderProgress = () => {

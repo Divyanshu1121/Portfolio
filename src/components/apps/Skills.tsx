@@ -8,7 +8,7 @@ import { staggerContainer, staggerItem } from '@/utils/animations';
 const tabs = [...skillCategories.map((c) => ({ id: c.id, label: c.label })), { id: 'tools', label: 'Tools' }];
 
 export default function Skills() {
-  const [activeTab, setActiveTab] = useState('aiml');
+  const [activeTab, setActiveTab] = useState('frontend');
 
   const activeCategory = skillCategories.find((c) => c.id === activeTab);
 

@@ -4,7 +4,7 @@ export type OSType = 'macos' | 'windows' | 'ubuntu';
 
 function getInitialOS(): OSType {
   if (typeof window !== 'undefined') {
-    const stored = localStorage.getItem('aryaos-active-os');
+    const stored = localStorage.getItem('divyanshuos-active-os');
     if (stored === 'macos' || stored === 'windows' || stored === 'ubuntu') {
       return stored;
     }
@@ -57,7 +57,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     // Apply attribute change and update activeOS after splash screen covers the layout
     setTimeout(() => {
       if (typeof window !== 'undefined') {
-        localStorage.setItem('aryaos-active-os', os);
+        localStorage.setItem('divyanshuos-active-os', os);
         document.documentElement.setAttribute('data-os', os);
       }
       set({ activeOS: os });

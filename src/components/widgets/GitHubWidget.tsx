@@ -17,23 +17,23 @@ export default function GitHubWidget() {
     followers: 12,
     public_repos: 18,
     avatar_url: 'https://avatars.githubusercontent.com/u/98129759?v=4',
-    name: 'Arya Shah',
-    login: 'arya-shah22',
+    name: 'Divyanshu M. Patel',
+    login: 'Divyanshu1121',
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchStats() {
       try {
-        const res = await fetch('https://api.github.com/users/arya-shah22');
+        const res = await fetch('https://api.github.com/users/Divyanshu1121');
         if (res.ok) {
           const data = await res.json();
           setStats({
             followers: data.followers || 12,
             public_repos: data.public_repos || 18,
             avatar_url: data.avatar_url || stats.avatar_url,
-            name: data.name || 'Arya Shah',
-            login: data.login || 'arya-shah22',
+            name: data.name || 'Divyanshu M. Patel',
+            login: data.login || 'Divyanshu1121',
           });
         }
       } catch (e) {

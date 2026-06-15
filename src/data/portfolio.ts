@@ -1,5 +1,5 @@
 // ============================================================
-// AryaOS — Portfolio Data (Single Source of Truth)
+// Divyanshu's Portfolio Data (Single Source of Truth)
 // ============================================================
 
 export interface Project {
@@ -23,8 +23,8 @@ export interface Experience {
   role: string;
   company: string;
   location?: string;
-  period: string;
-  duration: string;
+  period?: string;
+  duration?: string;
   color: string;
   isCurrent: boolean;
   projects: {
@@ -81,322 +81,224 @@ export interface ContactInfo {
 
 // ── Personal Info ──────────────────────────────────────────
 export const personalInfo = {
-  fullName: 'Arya Shah',
-  initials: 'AS',
-  role: 'AI Engineer · Full-Stack Developer',
+  fullName: 'Divyanshu M. Patel',
+  initials: 'DP',
+  role: 'Full Stack MERN Developer',
   location: 'Surat, Gujarat, India',
-  email: 'aryashah325@gmail.com',
-  phone: '+91 7405201227',
-  linkedin: 'https://linkedin.com/in/aryashah22',
-  github: 'https://github.com/arya-shah22',
-  githubUsername: 'arya-shah22',
-  university: 'Gujarat Technological University (GTU)',
-  degree: 'B.E. in Information Technology (2022–2026)',
+  email: 'divyanshupatel5633@gmail.com',
+  phone: '+91 9173150179',
+  linkedin: 'https://www.linkedin.com/in/divyanshu-patel-99450426b/',
+  github: 'https://github.com/Divyanshu1121',
+  githubUsername: 'Divyanshu1121',
+  university: 'C.K Pithawala College Of Engineering and Technology',
+  degree: 'B.E. Information Technology (2022–2026)',
   honours: 'Data Science, Grade AB (2024–2026)',
-  cgpa: 9.44,
+  cgpa: 8.14,
   cgpaMax: 10,
 };
 
-export const bio = `Information Technology graduate (CGPA 9.44/10) with production-level experience building AI systems that solve real problems. Designed pharmaceutical inspection pipelines, diamond trading ERPs, and WhatsApp-based AI automation — all deployed in live business environments. Comfortable across the full stack from model training and API development to VPS deployment and Flutter mobile apps.`;
+export const bio = `Full Stack MERN Developer specializing in scalable web applications, SaaS platforms, and AI-powered solutions.`;
 
 export const coreStack = [
-  'Python', 'React', 'FastAPI', 'TensorFlow', 'YOLO',
-  'Flutter', 'NodeJS', 'n8n', 'ElectronJS', 'MySQL',
+  'JavaScript', 'Python', 'React.js', 'Node.js', 'Express.js',
+  'MongoDB', 'Tailwind CSS', 'Bootstrap'
 ];
 
 export const quickStats = [
-  { label: 'CGPA', value: '9.44 / 10' },
-  { label: 'Graduation', value: '2026 · GTU' },
+  { label: 'CGPA', value: '8.14 / 10' },
+  { label: 'Graduation', value: '2026' },
   { label: 'Honours', value: 'Data Science' },
-  { label: 'Best Accuracy', value: '97.64% (CNN)' },
-  { label: 'Projects Live', value: '3 in Production' },
-  { label: 'Hackathon', value: '🥈 National 2nd' },
+  { label: 'Live Projects', value: '1 Client Website' },
+  { label: 'Internships', value: '2 Completed' },
 ];
 
 // ── Projects ───────────────────────────────────────────────
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Diamond & Jewellery Website',
-    badges: ['LIVE', 'FREELANCE', 'SEO'],
-    shortDescription: 'Modern jewellery showcase and inventory management platform designed for the luxury jewellery industry',
-    fullDescription: `Modern jewellery showcase and inventory management platform developed for the diamond and luxury jewellery industry. Built using ReactJS, FastAPI, Python, and SQL, the platform provides responsive product showcasing, inventory management, customer inquiry workflows, and scalable backend operations. Features include dynamic product listings, admin dashboard, multi-user stock handling, live gold rate integration, currency conversion APIs, and automated data refresh systems. Focused on scalability, performance, modern UI/UX, and business-oriented functionality.`,
-    stack: [
-      'ReactJS', 'Python', 'FastAPI', 'SQL', 'Inventory Management',
-      'Live Gold Rate API', 'Currency conversion API', 'REST APIs', 'Nginx', 'VPS',
-      'SEO Optimization', 'HTML/CSS', 'JavaScript', 'CI/CD', 'Responsive UI/UX', 'Business Automation'
-    ],
-    architecture: 'ReactJS Frontend → FastAPI Backend (Python) → SQL Database → External Gold & Currency APIs',
-    category: ['Full Stack', 'Inventory Management'],
-    imageUrl: '/projects/jewellery/img1.webp',
+    title: 'Visat Dental Care Website',
+    badges: ['LIVE', 'CLIENT PROJECT'],
+    shortDescription: 'Responsive dental clinic website with appointment booking workflow.',
+    fullDescription: `Developed and deployed a responsive dental clinic website for a real client with modern UI/UX and mobile optimization. Integrated appointment booking workflow with WhatsApp-based patient inquiry system. Implemented treatment gallery, doctor profile management, SEO-friendly structure, and responsive layouts. Managed production deployment using Vercel with custom domain, DNS configuration, and SSL setup.`,
+    stack: ['React.js', 'Node.js', 'Vercel'],
+    category: ['Full Stack', 'Web Development'],
     highlights: [
-      'Built a scalable full-stack architecture for jewellery business operations',
-      'Integrated real-time gold pricing and currency conversion systems',
-      'Developed inventory workflows for efficient product management',
-      'Designed responsive and modern user interfaces for premium branding',
-      'Focused on performance, scalability, and business-oriented functionality',
-      'Dynamic product catalog and showcase system with categories and filtering',
-      'Customer inquiry and contact workflows with automated periodic data refresh'
+      'Developed and deployed a responsive dental clinic website for a real client.',
+      'Integrated appointment booking workflow with WhatsApp-based patient inquiry system.',
+      'Implemented treatment gallery, doctor profile management, and SEO-friendly structure.',
+      'Managed production deployment using Vercel with custom domain and SSL setup.'
     ]
   },
   {
     id: 2,
-    title: 'DIAMO Software',
-    badges: ['LIVE', 'FREELANCE', 'DESKTOP APP'],
-    shortDescription: 'Full-stack diamond trading and business ERP management software',
-    fullDescription: `DIAMO is a full-stack diamond trading and business management software developed to streamline inventory, transactions, financial tracking, and daily business operations for diamond businesses. Built using ReactJS, Node.js, and SQL, the platform includes modules for buy/sale entries, returns, stock management, party ledger, payments, loans, expenses, reports, and automated daily backups. The system focuses on scalable architecture, secure data handling, responsive UI, and efficient workflow management for real-world trading operations.`,
-    stack: [
-      'ReactJS', 'Node.js', 'SQL Database', 'JavaScript', 'HTML/CSS',
-      'Inventory Management', 'ERP Software', 'Financial Ledger System',
-      'Database Security', 'Daily Backup Utility', 'ElectronJS', 'Business Intelligence',
-      'Transaction Workflows', 'Secure Databases', 'Desktop Application'
-    ],
-    architecture: 'Electron Shell → React UI → Node.js IPC/Backend API → SQL Database (Secure Records) → Automated Backup Utility',
-    category: ['Full Stack', 'ERP Systems', 'Inventory Management'],
-    imageUrl: '/projects/diamo/img1.webp',
+    title: 'Learnify - AI Learning Assistant',
+    badges: ['AI', 'GITHUB'],
+    shortDescription: 'AI-powered learning platform for generating explanations and intelligent responses.',
+    fullDescription: `Developed AI-powered learning platform for generating explanations, summaries, and intelligent responses. Integrated Groq APIs for real-time AI interaction and dynamic content generation.`,
+    stack: ['React.js', 'Node.js', 'Groq API'],
+    category: ['AI/ML', 'Full Stack'],
     highlights: [
-      'Developed a production-oriented business management system tailored for the diamond trading industry',
-      'Designed scalable transaction and ledger management workflows',
-      'Implemented inventory and stock management capabilities for operational efficiency',
-      'Built secure and structured database systems for handling financial and trading records',
-      'Dashboard, Buy/Sale Entries, Returns, Ledger, Payments, Loans, Expenses, and Reports',
-      'Automated daily backup system for data safety and security'
+      'Developed AI-powered learning platform for generating explanations and summaries.',
+      'Integrated Groq APIs for real-time AI interaction and dynamic content generation.'
     ]
   },
   {
     id: 3,
-    title: 'PackVision AI',
-    badges: ['AI', 'LIVE', 'INTERNSHIP'],
-    shortDescription: 'AI-powered pharmaceutical packaging inspection and verification system using computer vision',
-    fullDescription: `PackVision AI is an AI-powered pharmaceutical verification and inspection system developed to automate medicine packaging validation, bottle inspection, OCR-based label verification, and defect detection in real time. Built with Python, TensorFlow, YOLO, OpenCV, FastAPI, Flutter, and ReactJS, the system includes 360° bottle scanning workflows, AI inference pipelines, anomaly detection systems, and monitoring dashboards for scalable industrial inspection operations.`,
-    stack: [
-      'Python', 'TensorFlow', 'YOLO', 'OpenCV', 'EfficientNetV2B2', 'CNN Models',
-      'TFLite', 'Flutter', 'Dart', 'FastAPI', 'ReactJS', 'Google ML Kit',
-      'Artificial Intelligence', 'Computer Vision', 'Deep Learning', 'Industrial AI',
-      'Autoencoders', 'SSIM', 'VGG Perceptual Loss', 'Anomaly Detection', 'OCR'
-    ],
-    architecture: 'Flutter App (360° Scan) → FastAPI Inference Backend → [EfficientNetV2B2 + YOLO] → ReactJS Dashboard',
-    category: ['AI/ML', 'Computer Vision', 'Full Stack'],
-    metrics: 'SDE + AI/ML Role',
-    imageUrl: '/projects/packvision/img1.webp',
+    title: 'SaaS Project Management Tool',
+    badges: ['SAAS', 'GITHUB'],
+    shortDescription: 'Project and task management platform with role-based access.',
+    fullDescription: `Engineered project and task management platform with role-based access and workflow management. Implemented sprint tracking, dashboards, authentication, and team collaboration modules.`,
+    stack: ['MongoDB', 'Express.js', 'React.js', 'Node.js'],
+    category: ['Full Stack', 'SaaS'],
     highlights: [
-      'Developed defect detection pipelines using EfficientNetV2B2 and custom CNN architectures',
-      'Built anomaly detection systems using autoencoders, SSIM, and VGG perceptual loss',
-      'Trained YOLO-based object detection models for bottle localization and seal verification',
-      'Integrated OCR and document detection workflows using Google ML Kit',
-      'Developed real-time AI inference pipelines and 360° bottle scanning workflows',
-      'FastAPI backend APIs and ReactJS admin dashboard for inspection monitoring'
+      'Engineered project and task management platform with role-based access and workflow management.',
+      'Implemented sprint tracking, dashboards, authentication, and team collaboration modules.'
     ]
   },
   {
     id: 4,
-    title: 'WhatsApp-Based AI Appointment Scheduler',
-    badges: ['AI', 'AUTOMATION', 'INTERNSHIP'],
-    shortDescription: 'AI-powered business automation system for scheduling and meeting management through WhatsApp',
-    fullDescription: `WhatsApp Based AI Appointment Scheduler is an AI-powered business automation system developed to automate appointment scheduling, reminders, meeting management, and customer communication through WhatsApp using AI-driven workflows. Built using OpenAI API, n8n, WhatsApp Cloud API, Google Calendar API, Python, and workflow automation systems, the platform supports real-time scheduling, reminders, rescheduling, cancellation handling, and automated notifications. The system focuses on AI-driven conversational workflows, scalable automation architecture, API integrations, and reliable business process management.`,
-    stack: [
-      'n8n', 'OpenAI API', 'WhatsApp Cloud API', 'Google Calendar API', 'Google Sheets API',
-      'Python', 'Workflow Automation Systems', 'AI Agent Development', 'Google APIs',
-      'Conflict Detection', 'Edge-case Handling', 'Conversational AI'
-    ],
-    architecture: 'WhatsApp Message → n8n Webhook → OpenAI Intent Parser → Availability Check → Google Calendar Book → WhatsApp Confirmation',
-    category: ['AI/ML', 'Workflow Automation'],
-    imageUrl: '/projects/whatsapp/img1.webp',
+    title: 'Excel Analytics Platform',
+    badges: ['ANALYTICS', 'GITHUB'],
+    shortDescription: 'Excel upload and visualization platform with interactive charts.',
+    fullDescription: `Developed Excel upload and visualization platform with interactive charts and analytics dashboard. Built backend processing system for file handling, dynamic chart generation, and data insights.`,
+    stack: ['React.js', 'Node.js'],
+    category: ['Full Stack', 'Data Analytics'],
     highlights: [
-      'Developed AI-driven automation workflows for appointment scheduling and notifications using n8n and OpenAI',
-      'Integrated WhatsApp Cloud API for real-time communication and automated responses',
-      'Connected Google Calendar APIs for event creation, reminder scheduling, rescheduling, and cancellation workflows',
-      'Implemented workflow validation and edge-case handling for overlapping events and third-party API failures',
-      'Designed scalable automation architectures for real-world business scheduling operations'
+      'Developed Excel upload and visualization platform with interactive charts and analytics dashboard.',
+      'Built backend processing system for file handling, dynamic chart generation, and data insights.'
     ]
-  },
-  {
-    id: 5,
-    title: 'Copy-Move Forgery Image Detection',
-    badges: ['ML', '97.64% ACCURACY'],
-    shortDescription: 'AI-powered digital image forensics system to detect manipulated or tampered images',
-    fullDescription: `Copy-Move Forgery Image Detection is an AI-powered digital image forensics system developed to detect manipulated or tampered images by identifying duplicated regions within the same image using Deep Learning and Computer Vision techniques. Built using Python, CNN, OpenCV, TensorFlow, and benchmark datasets like MICC and CASIA, the system identifies duplicated image regions, performs feature extraction, similarity analysis, and forgery localization with high precision. The project achieved 97.64% accuracy through advanced preprocessing, pattern recognition, and CNN-based image analysis workflows.`,
-    stack: [
-      'Python', 'CNN (Convolutional Neural Networks)', 'OpenCV', 'TensorFlow', 'Keras',
-      'NumPy', 'MICC Dataset', 'CASIA Dataset', 'Computer Vision', 'Deep Learning',
-      'Image Processing', 'OpenCL', 'Pattern Recognition', 'Digital Image Forensics',
-      'Feature Engineering', 'AI Model Development'
-    ],
-    category: ['AI/ML', 'Computer Vision'],
-    metrics: 'AI/ML Developer Role',
-    imageUrl: '/projects/forgery/img1.webp',
-    highlights: [
-      'Developed a CNN-based forgery detection model capable of identifying duplicated image regions with high precision',
-      'Implemented advanced image preprocessing pipelines including noise reduction, normalization, segmentation, and feature enhancement',
-      'Applied feature extraction and similarity matching techniques to detect hidden tampered areas within images',
-      'Trained and evaluated the system using MICC and CASIA benchmark datasets widely used in digital image forensics research',
-      'Optimized the model architecture and preprocessing workflows to achieve 97.64% detection accuracy'
-    ]
-  },
+  }
 ];
 
 // ── Experience ─────────────────────────────────────────────
 export const experiences: Experience[] = [
   {
     id: 1,
-    role: 'Freelance Developer',
-    company: 'Self-Employed',
-    period: 'May 2026 – Present',
-    duration: 'Current',
-    color: '#28C840',
-    isCurrent: true,
+    role: 'Freelance Web Developer',
+    company: 'Visat Dental Care',
+    location: 'Surat, India',
+    color: '#28C8A0',
+    isCurrent: false,
     projects: [
       {
-        name: 'Jewellery & Diamond E-Commerce Website',
-        stack: 'ReactJS, Python, FastAPI, SQL, Live Gold Rate API, VPS',
+        name: 'Visat Dental Care Website',
+        stack: 'React.js, Node.js, Vercel',
         bullets: [
-          'Building jewellery showcase platform with product listings, customer inquiry workflows, and admin inventory management',
-          'Live gold rate and currency APIs with automated refresh',
-          'VPS deployment with professional SEO and CI/CD pipeline',
+          'Developed and deployed a responsive dental clinic website for a real client with modern UI/UX and mobile optimization.',
+          'Integrated appointment booking workflow with WhatsApp-based patient inquiry system.',
+          'Implemented treatment gallery, doctor profile management, and SEO-friendly structure.',
+          'Managed production deployment using Vercel with custom domain, DNS configuration, and SSL setup.'
         ],
-      },
-      {
-        name: 'DIAMO (Diamond Trading ERP Software)',
-        stack: 'ReactJS, ElectronJS, NodeJS, MySQL',
-        bullets: [
-          'Fully offline-capable ERP for diamond trading businesses',
-          'Carat-based stock management, real-time multi-variety tracking',
-          'Analytics dashboards: stock distribution, profit analysis, transaction visualisations',
-        ],
-      },
+      }
     ],
   },
   {
     id: 2,
-    role: 'AI / ML + SDE Intern',
-    company: 'Upnext Software Private Limited',
-    location: 'Surat',
-    period: 'January 2026 – April 2026',
-    duration: '4 months',
+    role: 'MERN Stack Developer Intern',
+    company: 'Webforest LLP',
+    location: 'Surat, India',
+    period: 'Jan 2026 – Mar 2026',
+    duration: '3 months',
     color: '#5E9BF0',
     isCurrent: false,
     projects: [
       {
-        name: 'PackVision AI',
-        stack: 'Python · TensorFlow · YOLO · TFLite · Flutter · FastAPI · ReactJS',
+        name: 'SaaS Project Management Platform',
+        stack: 'MERN Stack, Groq API, JWT',
         bullets: [
-          'Architected end-to-end pharmaceutical packaging inspection system using computer vision',
-          'Dual-stream defect detection: EfficientNetV2B2 + custom CNN',
-          'Autoencoder anomaly detection: SSIM + VGG perceptual loss',
-          'YOLO object detection for bottle localisation and seal integrity',
-          'Flutter scanning app + FastAPI backend + ReactJS admin dashboard',
-          'TFLite on-device inference reducing server round-trips',
+          'Developed multi-tenant SaaS Project Management platform using MERN stack architecture.',
+          'Built AI Learning Assistant integrating Groq APIs for real-time intelligent responses.',
+          'Implemented JWT authentication, secure REST APIs, and protected routing systems.',
+          'Worked in Agile development environment with sprint planning and task tracking.'
         ],
-      },
+      }
     ],
   },
   {
     id: 3,
-    role: 'AI Intern',
-    company: 'Nerdshouse Technologies LLP',
-    location: 'Surat',
-    period: 'July 2025',
-    duration: '1 month',
+    role: 'Web Developer Intern',
+    company: 'Zidio Development Pvt Ltd',
+    location: 'Remote',
+    period: 'Jun 2025 – Jul 2025',
+    duration: '2 months',
     color: '#A78BF5',
     isCurrent: false,
     projects: [
       {
-        name: 'WhatsApp-based AI Appointment Scheduler',
-        stack: 'n8n · OpenAI API · WhatsApp Cloud API · Google Calendar API',
+        name: 'Analytics Dashboard',
+        stack: 'MERN Stack',
         bullets: [
-          'Led development of production WhatsApp AI scheduling system',
-          'Multi-step n8n pipelines: OpenAI + WhatsApp + Google Calendar',
-          'Edge case handling: overlaps, missing inputs, API failures',
-          'Authored architecture documentation and deployment runbooks',
+          'Built Excel upload and analytics dashboard using MERN stack and dynamic chart visualization.'
         ],
-      },
+      }
     ],
-  },
+  }
 ];
 
 // ── Skills ─────────────────────────────────────────────────
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'aiml',
-    label: 'AI & ML',
+    id: 'frontend',
+    label: 'Frontend',
     skills: [
-      { name: 'TensorFlow / Keras', level: 90 },
-      { name: 'Computer Vision', level: 88 },
-      { name: 'YOLO (Object Detection)', level: 85 },
-      { name: 'CNN & Deep Learning', level: 87 },
-      { name: 'Autoencoders', level: 85 },
-      { name: 'TFLite / On-device', level: 80 },
-      { name: 'OpenCV', level: 85 },
-      { name: 'Scikit-learn', level: 78 },
-      { name: 'n8n Automation', level: 88 },
-      { name: 'OpenAI API', level: 85 },
+      { name: 'JavaScript', level: 90 },
+      { name: 'React.js', level: 85 },
+      { name: 'HTML5', level: 90 },
+      { name: 'CSS3', level: 85 },
+      { name: 'Tailwind CSS', level: 85 },
+      { name: 'Bootstrap', level: 80 },
     ],
   },
   {
-    id: 'fullstack',
-    label: 'Full Stack',
+    id: 'backend',
+    label: 'Backend & Databases',
     skills: [
-      { name: 'Python', level: 92 },
-      { name: 'JavaScript', level: 88 },
-      { name: 'ReactJS', level: 85 },
-      { name: 'FastAPI', level: 90 },
-      { name: 'NodeJS', level: 80 },
-      { name: 'Flutter / Dart', level: 75 },
-      { name: 'ElectronJS', level: 78 },
-      { name: 'HTML / CSS', level: 85 },
-      { name: 'REST API Design', level: 88 },
-      { name: 'SQL / MySQL', level: 80 },
+      { name: 'Node.js', level: 85 },
+      { name: 'Express.js', level: 85 },
+      { name: 'MongoDB', level: 80 },
+      { name: 'Firebase', level: 75 },
+      { name: 'REST APIs', level: 90 },
+      { name: 'Python', level: 75 },
     ],
   },
   {
-    id: 'devops',
-    label: 'DevOps',
+    id: 'tools_platforms',
+    label: 'Tools & Platforms',
     skills: [
-      { name: 'Linux Server Mgmt', level: 82 },
-      { name: 'VPS Deployment', level: 82 },
-      { name: 'Nginx Configuration', level: 75 },
-      { name: 'CI/CD Pipelines', level: 72 },
-      { name: 'API Deployment', level: 85 },
-      { name: 'Model Hosting', level: 78 },
-      { name: 'Git / GitHub', level: 88 },
+      { name: 'Git & GitHub', level: 85 },
+      { name: 'Postman', level: 80 },
+      { name: 'Vercel', level: 85 },
+      { name: 'VS Code', level: 90 },
+      { name: 'Jira', level: 80 },
     ],
   },
 ];
 
 export const toolGroups: ToolGroup[] = [
-  { label: 'IDEs', items: ['VS Code', 'Cursor', 'Android Studio'] },
-  { label: 'Version Control', items: ['Git', 'GitHub', 'GitLab'] },
-  { label: 'OS', items: ['macOS', 'Windows', 'Linux (Ubuntu)'] },
-  { label: 'AI APIs', items: ['OpenAI', 'Anthropic Claude', 'Google ML Kit'] },
-  { label: 'Cloud', items: ['Google Cloud', 'Hostinger VPS'] },
-  { label: 'Automation', items: ['n8n'] },
-  { label: 'Mobile', items: ['Flutter / Dart'] },
+  { label: 'Concepts', items: ['REST APIs', 'Authentication', 'SaaS Architecture', 'Responsive Design', 'Deployment'] },
+  { label: 'Project Management', items: ['Agile Methodology', 'Sprint Planning', 'Jira'] },
+  { label: 'Soft Skills', items: ['Problem Solving', 'Communication', 'Team Collaboration'] },
+  { label: 'Languages', items: ['English', 'Hindi', 'Gujarati'] },
 ];
 
 // ── Education ──────────────────────────────────────────────
 export const education: Education[] = [
   {
     id: 1,
-    degree: 'Bachelor of Engineering',
+    degree: 'B.E. Information Technology',
     field: 'Information Technology',
-    institution: 'Gujarat Technological University',
+    institution: 'C.K Pithawala College Of Engineering and Technology',
     period: '2022 – 2026',
-    grade: '9.44 / 10',
+    grade: '8.14 / 10',
     gradeLabel: 'CGPA',
     icon: '🎓',
     areas: [
-      'Data Structures & Algorithms',
-      'Machine Learning & AI',
-      'Computer Vision',
-      'Web Development',
-      'Database Management',
-      'Computer Networks',
-      'Software Engineering',
+      'Surat, India'
     ],
   },
   {
     id: 2,
-    degree: 'Honours Degree',
+    degree: 'Honors Degree',
     field: 'Data Science',
     institution: 'Gujarat Technological University',
     period: '2024 – 2026',
@@ -404,11 +306,7 @@ export const education: Education[] = [
     gradeLabel: 'Grade',
     icon: '📊',
     areas: [
-      'Statistical Analysis & Data Mining',
-      'Advanced Machine Learning',
-      'Python for Data Science',
-      'Big Data Analytics',
-      'AI Applications',
+      'India'
     ],
   },
 ];
@@ -417,45 +315,22 @@ export const education: Education[] = [
 export const certifications: Certification[] = [
   {
     id: 1,
-    issuer: 'Google Cloud',
+    issuer: 'Red and White Institute',
     items: [
-      'Google Cloud Computing Foundations: Data, ML and AI in Google Cloud',
-      'Google Cloud: The Arcade',
+      'Full Stack MERN Development'
     ],
     accent: '#4285F4',
-    icon: '☁️',
+    icon: '💻',
   },
   {
     id: 2,
     issuer: 'Infosys Springboard',
     items: [
-      'Basic Python',
-      'Data Science with Python',
-      'Introduction to Data Mining',
-      'Advanced Statistics and Data Mining for Data Science',
+      'Python Programming'
     ],
     accent: '#007CC3',
-    icon: '📘',
-  },
-  {
-    id: 3,
-    issuer: 'Forage × Deloitte',
-    items: [
-      'Deloitte Australia — Data Analytics Job Simulation',
-    ],
-    accent: '#86BC25',
-    icon: '📊',
-  },
-  {
-    id: 4,
-    issuer: 'Achievements',
-    items: [
-      '🥈 2nd Place — National-Level Technical Festival Hackathon',
-      '🥉 3rd Place — College-Level Web Development Competition',
-    ],
-    accent: '#FFD700',
-    icon: '🏆',
-  },
+    icon: '🐍',
+  }
 ];
 
 // ── Contact ────────────────────────────────────────────────
@@ -464,32 +339,32 @@ export const contactInfo: ContactInfo[] = [
     type: 'email',
     icon: '📧',
     label: 'Email',
-    value: 'aryashah325@gmail.com',
+    value: 'divyanshupatel5633@gmail.com',
     action: 'mailto',
-    url: 'mailto:aryashah325@gmail.com',
+    url: 'mailto:divyanshupatel5633@gmail.com',
   },
   {
     type: 'phone',
     icon: '📱',
     label: 'Phone',
-    value: '+91 7405201227',
+    value: '+91 9173150179',
     action: 'copy',
   },
   {
     type: 'linkedin',
     icon: '💼',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/aryashah22',
+    value: 'linkedin.com/in/divyanshu-patel-99450426b',
     action: 'link',
-    url: 'https://linkedin.com/in/aryashah22',
+    url: 'https://www.linkedin.com/in/divyanshu-patel-99450426b/',
   },
   {
     type: 'github',
     icon: '🐙',
     label: 'GitHub',
-    value: 'github.com/arya-shah22',
+    value: 'github.com/Divyanshu1121',
     action: 'link',
-    url: 'https://github.com/arya-shah22',
+    url: 'https://github.com/Divyanshu1121',
   },
   {
     type: 'location',
@@ -502,64 +377,55 @@ export const contactInfo: ContactInfo[] = [
 
 // ── Resume Text (for Resume window) ───────────────────────
 export const resumeText = {
-  summary: `Information Technology graduate (CGPA 9.44/10) with production-level experience in AI/ML, full-stack development, and backend engineering. Designed and deployed computer vision pipelines, ERP systems, and AI-driven automation workflows used in real-world business environments. Adept across the full delivery lifecycle — from model training and API development to VPS deployment and Flutter-based mobile interfaces. Seeking roles in Software Engineering or AI Engineering.`,
+  summary: `Full Stack MERN Developer specializing in scalable web applications, SaaS platforms, and AI-powered solutions. Experience building multi-tenant architectures, AI learning assistants, and responsive web platforms.`,
   technicalSkills: {
-    'Programming': 'Python, Java, C, JavaScript',
-    'AI & ML': 'Deep Learning, Computer Vision, CNN, Autoencoders, YOLO, TensorFlow/Keras, OpenCV, Scikit-learn, TFLite, Model Inference Pipelines',
-    'Backend & APIs': 'FastAPI, REST APIs, OpenAI API, Google Calendar API, WhatsApp Cloud API',
-    'Frontend': 'HTML, CSS, JavaScript, React',
-    'AI Automation': 'n8n, AI Agent Development, WhatsApp-based AI Systems',
-    'Databases': 'SQL, MySQL',
-    'DevOps': 'Nginx, Linux, VPS, Hostinger VPS, API Deployment, Model Hosting',
-    'Tools': 'VS Code, Cursor, Android Studio, Git, GitHub, GitLab',
-    'OS': 'macOS, Windows, Linux',
+    'Programming Languages': 'JavaScript, Python, HTML5, CSS3',
+    'Frontend Technologies': 'React.js, Tailwind CSS, Bootstrap',
+    'Backend Technologies': 'Node.js, Express.js',
+    'Databases': 'MongoDB, Firebase',
+    'Tools & Platforms': 'Git, GitHub, Postman, Vercel, VS Code',
+    'Concepts': 'REST APIs, Authentication, SaaS Architecture, Responsive Design, Deployment',
+    'Project Management': 'Agile Methodology, Sprint Planning, Jira',
+    'Soft Skills': 'Problem Solving, Communication, Team Collaboration'
   },
 };
 
 // ── AI Assistant System Prompt ─────────────────────────────
-export const aiSystemPrompt = `You are ARYA-AI, a professional AI assistant representing Arya Shah's portfolio.
-Answer ONLY questions about Arya Shah based on the following resume data.
+export const aiSystemPrompt = `You are DIVYANSHU-AI, a professional AI assistant representing Divyanshu M. Patel's portfolio.
+Answer ONLY questions about Divyanshu based on the following resume data.
 Be concise (2–4 sentences max unless asked for detail), professional, and friendly.
-If asked something outside Arya's background, politely say you can only discuss Arya's work.
+If asked something outside Divyanshu's background, politely say you can only discuss Divyanshu's work.
 Never make up information not in the resume.
-Speak in first person as if you ARE Arya ("I built...", "My experience includes...").
+Speak in first person as if you ARE Divyanshu ("I built...", "My experience includes...").
 
-ARYA SHAH COMPLETE PROFILE:
+DIVYANSHU M. PATEL COMPLETE PROFILE:
 
 Education:
-- B.E. in Information Technology, GTU, CGPA 9.44/10 (2022-2026)
-- Honours in Data Science, GTU, Grade AB (2024-2026)
+- B.E. Information Technology, C.K Pithawala College Of Engineering and Technology, CGPA 8.14/10 (2022-2026)
+- Honors Degree in Data Science, Gujarat Technological University, AB Grade (2024-2026)
 
 Experience:
-1. Freelance Developer (May 2026-Present)
-   - Jewellery e-commerce: ReactJS, FastAPI, SQL, Live Gold/Currency APIs, VPS, CI/CD, SEO
-   - DIAMO ERP: ReactJS, ElectronJS, NodeJS, MySQL — diamond trading business software
+1. MERN Stack Developer Intern, Webforest LLP (Jan-Mar 2026)
+   - Developed multi-tenant SaaS Project Management platform
+   - Built AI Learning Assistant integrating Groq APIs
+   - Implemented JWT authentication and secure REST APIs
+   - Agile, Sprint planning
 
-2. AI/ML + SDE Intern, Upnext Software Pvt. Ltd. (Jan-Apr 2026)
-   - PackVision AI: pharmaceutical packaging inspection using deep learning
-   - EfficientNetV2B2 + custom CNN for defect classification
-   - Autoencoder with SSIM + VGG perceptual loss for anomaly detection
-   - YOLO for bottle localisation and seal integrity in 360° scan workflow
-   - Flutter scanning app + FastAPI backend + ReactJS dashboard
-   - TFLite on-device inference for real-time performance
-
-3. AI Intern, Nerdshouse Technologies LLP (Jul 2025)
-   - WhatsApp AI appointment scheduler
-   - n8n pipelines: OpenAI + WhatsApp Cloud API + Google Calendar API
-   - Production deployment with documentation
+2. Web Developer Intern, Zidio Development Pvt Ltd (Jun-Jul 2025)
+   - Built Excel upload and analytics dashboard using MERN stack
 
 Projects:
-- Copy-Move Forgery Detection: CNN, 97.64% accuracy, MICC/CASIA datasets
-- AI Impact on Jobs Dashboard: FastAPI, Chart.js, 3000+ data points
-- Customer Segmentation: K-Means, 5 clusters, Scikit-learn
+- Visat Dental Care Website: Live client project, responsive design, WhatsApp booking workflow
+- Learnify - AI Learning Assistant: React.js, Node.js, Groq APIs
+- SaaS Project Management Tool: MERN stack, role-based access, sprint tracking
+- Excel Analytics Platform: React.js, Node.js, interactive charts
 
-Skills: Python, JavaScript, Java, C, TensorFlow/Keras, YOLO, OpenCV, TFLite,
-FastAPI, ReactJS, Flutter/Dart, NodeJS, ElectronJS, n8n, SQL, Linux, VPS, Nginx,
-CI/CD, Git, OpenAI API, WhatsApp Cloud API, Google Calendar API, Google Cloud
+Skills: JavaScript, Python, HTML5, CSS3, React.js, Tailwind CSS, Bootstrap, Node.js, Express.js, MongoDB, Firebase, Git, GitHub, Postman, Vercel, VS Code.
 
-Achievements: 2nd place national hackathon, 3rd college web dev competition
-Certifications: Google Cloud ML, Infosys Springboard (Python, Data Science, Statistics), Deloitte Data Analytics
-Contact: aryashah325@gmail.com | +91 7405201227 | linkedin.com/in/aryashah22`;
+Certifications: Full Stack MERN Development (Red and White Institute), Python Programming (Infosys Springboard)
+Contact: divyanshupatel5633@gmail.com | +91 9173150179
+GitHub: https://github.com/Divyanshu1121
+LinkedIn: https://www.linkedin.com/in/divyanshu-patel-99450426b/`;
 
 // ── Dock Items ─────────────────────────────────────────────
 export const dockItems = [
@@ -572,8 +438,8 @@ export const dockItems = [
   { id: 'contact', label: 'Contact', icon: '✉️', color: '#28C840', windowId: 'contact' },
   { id: 'ai', label: 'AI Assistant', icon: '🤖', color: '#7B61FF', windowId: 'ai', featured: true },
   { id: 'terminal', label: 'Terminal', icon: '>_', color: '#333', windowId: 'terminal' },
-  { id: 'github', label: 'GitHub', icon: '🐙', color: '#333', external: 'https://github.com/arya-shah22' },
-  { id: 'linkedin', label: 'LinkedIn', icon: 'in', color: '#0A66C2', external: 'https://linkedin.com/in/aryashah22' },
+  { id: 'github', label: 'GitHub', icon: '🐙', color: '#333', external: 'https://github.com/Divyanshu1121' },
+  { id: 'linkedin', label: 'LinkedIn', icon: 'in', color: '#0A66C2', external: 'https://www.linkedin.com/in/divyanshu-patel-99450426b/' },
   { id: 'google', label: 'Google', icon: '🔍', color: '#4285F4', windowId: 'google' },
 ];
 
@@ -589,8 +455,8 @@ export const desktopIcons = [
   { id: 'contact', label: 'Contact', icon: '✉️', gradient: 'linear-gradient(135deg, #28C840, #1FA832)', windowId: 'contact' },
   { id: 'ai', label: 'AI Assistant', icon: '🤖', gradient: 'linear-gradient(135deg, #5E9BF0, #A78BF5)', windowId: 'ai' },
   { id: 'terminal', label: 'Terminal', icon: '>_', gradient: 'linear-gradient(135deg, #1a1a2e, #16213e)', windowId: 'terminal' },
-  { id: 'github', label: 'GitHub', icon: '🐙', gradient: 'linear-gradient(135deg, #333, #555)', external: 'https://github.com/arya-shah22' },
-  { id: 'linkedin', label: 'LinkedIn', icon: 'in', gradient: 'linear-gradient(135deg, #0A66C2, #084B91)', external: 'https://linkedin.com/in/aryashah22' },
+  { id: 'github', label: 'GitHub', icon: '🐙', gradient: 'linear-gradient(135deg, #333, #555)', external: 'https://github.com/Divyanshu1121' },
+  { id: 'linkedin', label: 'LinkedIn', icon: 'in', gradient: 'linear-gradient(135deg, #0A66C2, #084B91)', external: 'https://www.linkedin.com/in/divyanshu-patel-99450426b/' },
   { id: 'google', label: 'Google', icon: '🔍', gradient: 'linear-gradient(135deg, #ffffff, #f5f5f7)', windowId: 'google' },
   { id: 'games', label: 'Games', icon: '🎮', gradient: 'linear-gradient(135deg, #FF5252, #FF7A00)', windowId: 'games' },
   { id: 'system_monitor', label: 'Activity Monitor', icon: '📈', gradient: 'linear-gradient(135deg, #00FF87, #60EFFF)', windowId: 'system_monitor' },

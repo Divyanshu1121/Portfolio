@@ -9,7 +9,7 @@ export default function OnboardingGuide() {
 
   useEffect(() => {
     // Check if the user has already dismissed the guide in this session
-    const dismissed = sessionStorage.getItem('aryaos-guide-dismissed-v2') === 'true';
+    const dismissed = sessionStorage.getItem('divyanshuos-guide-dismissed-v2') === 'true';
     if (!dismissed) {
       // Small delay after load to make it feel deliberate and smooth
       const timer = setTimeout(() => {
@@ -51,7 +51,7 @@ export default function OnboardingGuide() {
 
   const handleDismiss = () => {
     setShow(false);
-    sessionStorage.setItem('aryaos-guide-dismissed-v2', 'true');
+    sessionStorage.setItem('divyanshuos-guide-dismissed-v2', 'true');
   };
 
   if (!show || !targetPos) return null;

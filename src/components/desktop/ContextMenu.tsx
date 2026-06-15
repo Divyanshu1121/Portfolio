@@ -15,7 +15,7 @@ export default function ContextMenu({ x, y, onClose }: ContextMenuProps) {
   const [activeSubmenu, setActiveSubmenu] = useState<'wallpaper' | 'os' | null>(null);
 
   const wallpaperLabels: Record<string, string> = {
-    'desktop-wallpaper': 'AryaOS Classic',
+    'desktop-wallpaper': 'DivyanshuOS Classic',
     'spiderman': 'Spiderman',
     'car': 'Car',
     'black_hole': 'Black Hole',
@@ -126,7 +126,7 @@ export default function ContextMenu({ x, y, onClose }: ContextMenuProps) {
       </div>
       <div
         className="context-menu-item"
-        onClick={() => { window.open('https://github.com/arya-shah22', '_blank'); onClose(); }}
+        onClick={() => { window.open('https://github.com/Divyanshu1121', '_blank'); onClose(); }}
       >
         View Source Code <span style={{ fontSize: '10px' }}>↗</span>
       </div>

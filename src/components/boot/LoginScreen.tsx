@@ -106,7 +106,7 @@ export default function LoginScreen() {
         }}
       >
         <img
-          src="/avatar_cartoon.webp"
+          src="/avatar_cartoon.jpg"
           alt="Avatar"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
@@ -126,7 +126,7 @@ export default function LoginScreen() {
           margin: 0,
         }}
       >
-        Arya Shah
+        Divyanshu M. Patel
       </motion.h1>
 
       {/* Subtitle / Role (Enlarged) */}
@@ -141,7 +141,7 @@ export default function LoginScreen() {
           margin: 0,
         }}
       >
-        AI Engineer · Full-Stack Developer
+        Full-Stack MERN Developer
       </motion.p>
 
       {/* Enter Button (Enlarged) */}

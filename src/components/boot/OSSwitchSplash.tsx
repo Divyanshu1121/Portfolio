@@ -103,7 +103,7 @@ export default function OSSwitchSplash({ targetOS }: OSSwitchSplashProps) {
         }}
       >
         <img
-          src="/avatar_cartoon.webp"
+          src="/avatar_cartoon.jpg"
           alt="Avatar"
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />

@@ -1,4 +1,4 @@
-// Shared Framer Motion animation variants for AryaOS
+// Shared Framer Motion animation variants for DivyanshuOS
 
 export const windowVariants = {
   hidden: {

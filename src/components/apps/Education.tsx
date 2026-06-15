@@ -92,7 +92,7 @@ export default function Education() {
           flexWrap: 'wrap',
         }}
       >
-        {['9.44 CGPA', 'Top of cohort', 'Dual degree', '2026 Graduate'].map((item) => (
+        {['8.14 CGPA', 'Dual degree', 'Honours: Data Science', '2026 Graduate'].map((item) => (
           <span key={item} style={{
             fontSize: '11px',
             fontWeight: 600,

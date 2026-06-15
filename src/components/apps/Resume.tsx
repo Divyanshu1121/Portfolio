@@ -32,8 +32,8 @@ export default function Resume() {
             style={{ fontSize: '11px', padding: '4px 12px' }}
             onClick={() => {
               const link = document.createElement('a');
-              link.href = '/arya-shah-resume.pdf';
-              link.download = 'Arya-Shah-Resume.pdf';
+              link.href = '/divyanshu-patel-resume.pdf';
+              link.download = 'Divyanshu-Patel-Resume.pdf';
               link.click();
             }}
           >
@@ -59,7 +59,7 @@ export default function Resume() {
           <h2>Education</h2>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
             <h3>B.E. in Information Technology</h3>
-            <span style={{ fontSize: '11px', color: '#666' }}>CGPA: 9.44</span>
+            <span style={{ fontSize: '11px', color: '#666' }}>CGPA: 8.14</span>
           </div>
           <p style={{ color: '#666', marginBottom: '4px' }}>Gujarat Technological University · 2022–2026</p>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '6px' }}>

@@ -126,7 +126,7 @@ export default function RecruiterMode() {
                     Direct Contact
                   </h4>
                   <p style={{ fontSize: '14px', fontWeight: 600, margin: '4px 0 0 0' }}>
-                    aryashah325@gmail.com
+                    divyanshupatel5633@gmail.com
                   </p>
                 </div>
                 <p style={{ fontSize: '11px', color: 'var(--text-muted)', margin: '6px 0 0 0' }}>
@@ -142,7 +142,7 @@ export default function RecruiterMode() {
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 <a
-                  href="/arya-shah-resume.pdf"
+                  href="/divyanshu-patel-resume.pdf"
                   download
                   className="btn-primary"
                   style={{
@@ -160,13 +160,13 @@ export default function RecruiterMode() {
                 <button
                   onClick={() => {
                     navigator.clipboard.writeText(JSON.stringify({
-                      name: "Arya Shah",
+                      name: "Divyanshu M. Patel",
                       role: "AI Engineer & Full-Stack Developer",
-                      cgpa: "9.44/10",
-                      email: "aryashah325@gmail.com",
+                      cgpa: "8.14/10",
+                      email: "divyanshupatel5633@gmail.com",
                       phone: "+917405201227",
-                      linkedin: "https://linkedin.com/in/aryashah22",
-                      github: "https://github.com/arya-shah22"
+                      linkedin: "https://linkedin.com/in/divyanshu-patel-99450426b",
+                      github: "https://github.com/Divyanshu1121"
                     }, null, 2));
                     addNotification({ title: 'System', message: 'Candidate JSON copied to clipboard!', icon: '📋' });
                   }}
@@ -190,7 +190,7 @@ export default function RecruiterMode() {
               </div>
             </div>
 
-            {/* Why Hire Arya Shah info */}
+            {/* Why Hire Divyanshu M. Patel info */}
             <div className="card" style={{ padding: '16px' }}>
               <h4 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '10px' }}>
                 🚀 Top 3 Strengths
@@ -203,7 +203,7 @@ export default function RecruiterMode() {
                   <strong>Full-Stack Mastery:</strong> Competent building complete flows: Flutter apps, high-performance FastAPI backends, and Electron desktop tools (Diamo ERP).
                 </li>
                 <li>
-                  <strong>Strong Academic Foundations:</strong> CGPA of 9.44/10 in B.E. IT and a dedicated Honours in Data Science. 2nd place in national technical hackathon.
+                  <strong>Strong Academic Foundations:</strong> CGPA of 8.14/10 in B.E. IT and a dedicated Honours in Data Science.
                 </li>
               </ul>
             </div>

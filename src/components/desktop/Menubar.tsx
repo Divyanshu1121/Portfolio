@@ -8,7 +8,7 @@ interface MenubarProps {
   onSpotlight: () => void;
 }
 
-type MenuType = 'apple' | 'aryaos' | 'file' | 'view' | 'window' | 'help' | 'tech';
+type MenuType = 'apple' | 'divyanshuos' | 'file' | 'view' | 'window' | 'help' | 'tech';
 
 export default function Menubar({ onSpotlight }: MenubarProps) {
   const [time, setTime] = useState('');
@@ -213,7 +213,7 @@ export default function Menubar({ onSpotlight }: MenubarProps) {
                 className="menubar-dropdown-item"
                 onClick={() => handleAction(() => openWindow('about'))}
               >
-                <span>About AryaOS</span>
+                <span>About DivyanshuOS</span>
               </div>
               <div
                 style={itemStyle}
@@ -241,15 +241,15 @@ export default function Menubar({ onSpotlight }: MenubarProps) {
           )}
         </div>
 
-        {/* AryaOS Menu */}
+        {/* DivyanshuOS Menu */}
         <div style={{ position: 'relative' }}>
           <span
-            onClick={() => toggleMenu('aryaos')}
-            style={{ ...menuTriggerStyle('aryaos'), fontWeight: 700 }}
+            onClick={() => toggleMenu('divyanshuos')}
+            style={{ ...menuTriggerStyle('divyanshuos'), fontWeight: 700 }}
           >
-            AryaOS
+            DivyanshuOS
           </span>
-          {activeMenu === 'aryaos' && (
+          {activeMenu === 'divyanshuos' && (
             <div style={{ ...dropdownStyle, left: '0' }}>
               <div
                 style={itemStyle}
@@ -271,7 +271,7 @@ export default function Menubar({ onSpotlight }: MenubarProps) {
               <div
                 style={itemStyle}
                 className="menubar-dropdown-item"
-                onClick={() => handleAction(() => window.open('/arya-shah-resume.pdf', '_blank'))}
+                onClick={() => handleAction(() => window.open('/divyanshu-patel-resume.pdf', '_blank'))}
               >
                 <span>Download Resume</span>
                 <span style={shortcutStyle}>📄</span>
@@ -316,7 +316,7 @@ export default function Menubar({ onSpotlight }: MenubarProps) {
               <div
                 style={itemStyle}
                 className="menubar-dropdown-item"
-                onClick={() => handleAction(() => window.open('/arya-shah-resume.pdf', '_blank'))}
+                onClick={() => handleAction(() => window.open('/divyanshu-patel-resume.pdf', '_blank'))}
               >
                 <span>Download PDF</span>
               </div>
@@ -406,20 +406,20 @@ export default function Menubar({ onSpotlight }: MenubarProps) {
                 className="menubar-dropdown-item"
                 onClick={() => handleAction(() => alert('Onboarding Tip: Click dock icons to launch apps. Right click on the desktop to change wallpapers. You can drag and resize any open windows!'))}
               >
-                <span>AryaOS Help Tips</span>
+                <span>DivyanshuOS Help Tips</span>
               </div>
               <div style={dividerStyle} />
               <div
                 style={itemStyle}
                 className="menubar-dropdown-item"
-                onClick={() => handleAction(() => window.open('https://github.com/arya-shah22', '_blank'))}
+                onClick={() => handleAction(() => window.open('https://github.com/Divyanshu1121', '_blank'))}
               >
                 <span>GitHub Source</span>
               </div>
               <div
                 style={itemStyle}
                 className="menubar-dropdown-item"
-                onClick={() => handleAction(() => window.open('https://linkedin.com/in/aryashah22', '_blank'))}
+                onClick={() => handleAction(() => window.open('https://linkedin.com/in/divyanshu-patel-99450426b', '_blank'))}
               >
                 <span>LinkedIn Contact</span>
               </div>

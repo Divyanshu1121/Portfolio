@@ -3,23 +3,22 @@ import "./globals.css";
 import { ThemeSyncer } from "./ThemeSyncer";
 
 export const metadata: Metadata = {
-  title: "Arya Shah | AI Engineer · Full-Stack Developer — AryaOS Portfolio",
+  title: "Divyanshu M. Patel | Full-Stack MERN Developer — DivyanshuOS Portfolio",
   description:
-    "Interactive macOS-style portfolio of Arya Shah — AI Engineer and Full-Stack Developer from Surat, India. Explore projects, skills, and experience in an immersive desktop environment.",
+    "Interactive macOS-style portfolio of Divyanshu M. Patel — Full-Stack MERN Developer from Surat, India. Explore projects, skills, and experience in an immersive desktop environment.",
   keywords: [
-    "Arya Shah",
-    "AI Engineer",
+    "Divyanshu M. Patel",
+    "Divyanshu Patel",
     "Full Stack Developer",
+    "MERN Stack",
     "Portfolio",
-    "Machine Learning",
-    "TensorFlow",
     "React",
-    "FastAPI",
-    "Computer Vision",
+    "Node.js",
+    "SaaS",
   ],
-  authors: [{ name: "Arya Shah", url: "https://github.com/arya-shah22" }],
+  authors: [{ name: "Divyanshu M. Patel", url: "https://github.com/Divyanshu1121" }],
   openGraph: {
-    title: "Arya Shah | AI Engineer · Full-Stack Developer",
+    title: "Divyanshu M. Patel | Full-Stack MERN Developer",
     description:
       "Interactive macOS-style portfolio with live AI assistant, terminal, and draggable windows.",
     type: "website",
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arya Shah | AI Engineer · Full-Stack Developer",
+    title: "Divyanshu M. Patel | Full-Stack MERN Developer",
     description:
       "Interactive macOS-style portfolio with live AI assistant, terminal, and draggable windows.",
   },

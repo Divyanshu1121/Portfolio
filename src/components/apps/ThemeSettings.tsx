@@ -80,7 +80,7 @@ export default function ThemeSettings() {
   const { activeOS, setActiveOS, activeWallpaper, setActiveWallpaper, wallpapers } = useAppStore();
 
   const wallpaperLabels: Record<string, string> = {
-    'desktop-wallpaper': '🌌 AryaOS Classic',
+    'desktop-wallpaper': '🌌 DivyanshuOS Classic',
     'spiderman': '🕷️ Spiderman',
     'car': '🚗 Car',
     'black_hole': '🕳️ Black Hole',

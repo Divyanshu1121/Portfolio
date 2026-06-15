@@ -19,7 +19,7 @@ const COMMANDS = [
 
 export default function Terminal() {
   const [history, setHistory] = useState<TerminalLine[]>([
-    { type: 'system', content: 'AryaOS Terminal v1.0 — Type "help" for available commands.' },
+    { type: 'system', content: 'DivyanshuOS Terminal v1.0 — Type "help" for available commands.' },
     { type: 'system', content: '' },
   ]);
   const [input, setInput] = useState('');
@@ -51,7 +51,7 @@ export default function Terminal() {
     const trimmed = cmd.trim();
     if (!trimmed) return;
 
-    setHistory((h) => [...h, { type: 'input', content: `arya@portfolio:~$ ${trimmed}` }]);
+    setHistory((h) => [...h, { type: 'input', content: `divyanshu@portfolio:~$ ${trimmed}` }]);
     setCmdHistory((h) => [...h, trimmed]);
     setHistoryIdx(-1);
 
@@ -63,7 +63,7 @@ export default function Terminal() {
       case 'help':
         addOutput([
           '┌─────────────────────────────────────────────┐',
-          '│  AryaOS Terminal — Available Commands       │',
+          '│  DivyanshuOS Terminal — Available Commands       │',
           '├─────────────────────────────────────────────┤',
           '│  whoami       Who am I?                     │',
           '│  about        Full bio                      │',
@@ -84,7 +84,7 @@ export default function Terminal() {
           '│  neofetch     System info display            │',
           '│  snake        🐍 Play snake game             │',
           '│  matrix       Matrix rain effect             │',
-          '│  hire         Why hire Arya?                 │',
+          '│  hire         Why hire Divyanshu?                 │',
           '│  version      System version                 │',
           '└─────────────────────────────────────────────┘',
         ]);
@@ -219,7 +219,7 @@ export default function Terminal() {
         break;
 
       case 'pwd':
-        addOutput('/home/arya/portfolio');
+        addOutput('/home/divyanshu/portfolio');
         break;
 
       case 'ls':
@@ -239,7 +239,7 @@ export default function Terminal() {
         break;
 
       case 'version':
-        addOutput('AryaOS v2.0 — Built by Arya Shah with React, Next.js, Framer Motion');
+        addOutput('DivyanshuOS v2.0 — Built by Divyanshu M. Patel with React, Next.js, Framer Motion');
         break;
 
       case 'snake':
@@ -250,7 +250,7 @@ export default function Terminal() {
       case 'matrix':
         addOutput([
           '╔══════════════════════════════════════╗',
-          '║     THE MATRIX HAS YOU, ARYA...      ║',
+          '║     THE MATRIX HAS YOU, DIVYANSHU...      ║',
           '║                                      ║',
           '║  01001000 01101001 01110010 01100101  ║',
           '║  01000001 01110010 01111001 01100001  ║',
@@ -258,7 +258,7 @@ export default function Terminal() {
           '║     Wake up, recruiter...             ║',
           '║     The Matrix has you.               ║',
           '║     Follow the white rabbit.          ║',
-          '║     aryashah325@gmail.com             ║',
+          '║     divyanshupatel5633@gmail.com             ║',
           '╚══════════════════════════════════════╝',
         ]);
         break;
@@ -270,7 +270,7 @@ export default function Terminal() {
       case 'hire':
         addOutput([
           '',
-          'Calculating ROI of hiring Arya Shah...',
+          'Calculating ROI of hiring Divyanshu M. Patel...',
           '████████████████████ 100%',
           '',
           '  ██╗  ██╗██╗██████╗ ███████╗    ██╗  ██╗██╗███╗   ███╗',
@@ -280,7 +280,7 @@ export default function Terminal() {
           '  ██║  ██║██║██║  ██║███████╗    ██║  ██║██║██║ ╚═╝ ██║',
           '',
           '  Expected output: Exceptional software + AI solutions.',
-          '  Action: aryashah325@gmail.com',
+          '  Action: divyanshupatel5633@gmail.com',
           '',
         ]);
         break;
@@ -290,23 +290,23 @@ export default function Terminal() {
           '  [■] Accessing mainframe...',
           '  [■] Bypassing firewall... ████████ OK',
           '  [■] Decrypting portfolio data... ████████ OK',
-          '  [■] Result: Arya Shah is an excellent developer.',
+          '  [■] Result: Divyanshu M. Patel is an excellent developer.',
           '  [■] Recommendation: HIRE IMMEDIATELY',
         ]);
         break;
 
       case 'neofetch':
         addOutput([
-          '    ___        Arya@AryaOS',
+          '    ___        Divyanshu@DivyanshuOS',
           '   /   \\       -----------',
-          '  |  AS |      OS: AryaOS v2.0 (React Edition)',
+          '  |  AS |      OS: DivyanshuOS v2.0 (React Edition)',
           '   \\___/       Host: Portfolio Website',
           '               Kernel: Next.js 14.0',
           '  ========     Uptime: Since June 2026',
           '               Packages: 47 npm (node_modules)',
-          '               Shell: AryaTerminal v1.0',
+          '               Shell: DivyanshuTerminal v1.0',
           '               Resolution: 1920×1080',
-          '               DE: AryaOS Desktop',
+          '               DE: DivyanshuOS Desktop',
           '               WM: react-rnd',
           '               Theme: Dark Space [Dark]',
           '               Icons: Custom SVG',
@@ -385,7 +385,7 @@ export default function Terminal() {
 
       {/* Input line */}
       <div style={{ display: 'flex', alignItems: 'center', fontFamily: 'var(--font-mono)', fontSize: '13px', position: 'relative' }}>
-        <span className="terminal-prompt">arya@portfolio:~$&nbsp;</span>
+        <span className="terminal-prompt">divyanshu@portfolio:~$&nbsp;</span>
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center', flex: 1, minHeight: '20px' }}>
           <span style={{ whiteSpace: 'pre', color: '#c8f5c8' }}>{input}</span>
           <span className="terminal-cursor" />

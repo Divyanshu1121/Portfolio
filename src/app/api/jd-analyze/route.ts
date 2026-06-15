@@ -10,14 +10,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Anthropic API key is not configured.' }, { status: 500 });
     }
 
-    const prompt = `You are a recruiter helper. Below is Arya Shah's professional profile system prompt:
+    const prompt = `You are a recruiter helper. Below is Divyanshu M. Patel's professional profile system prompt:
 ${aiSystemPrompt}
 
 Please analyze the following Job Description (JD) and provide:
 1. MATCH SCORE: A percentage fit (e.g. 85%) based on alignment with his skills and experiences.
 2. SKILLS MATCHED: Bullet points of matched skills.
-3. SKILLS GAPS / AREAS TO DEVELOP: Bullet points of technologies or areas in the JD that Arya hasn't listed or might need to brush up on.
-4. COVER LETTER SNIPPET: A short, high-impact 3-4 sentence paragraph highlighting why Arya is perfect for this role (written in first-person from Arya's perspective).
+3. SKILLS GAPS / AREAS TO DEVELOP: Bullet points of technologies or areas in the JD that Divyanshu hasn't listed or might need to brush up on.
+4. COVER LETTER SNIPPET: A short, high-impact 3-4 sentence paragraph highlighting why Divyanshu is perfect for this role (written in first-person from Divyanshu's perspective).
 
 JD to Analyze:
 ${jobDescription}`;
