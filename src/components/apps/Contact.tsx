@@ -27,24 +27,26 @@ export default function Contact() {
     e.preventDefault();
     setSending(true);
 
-    try {
-      // Formspree integration — replace YOUR_FORM_ID with actual form ID
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
+    // Build WhatsApp message with form details
+    const waMessage = `Hi Divyanshu! 👋
 
-      if (response.ok) {
-        setSent(true);
-        setForm({ name: '', email: '', subject: '', message: '' });
-        addNotification({ title: 'DivyanshuOS', message: '✅ Message sent successfully!', icon: '📧' });
-      }
-    } catch {
-      addNotification({ title: 'DivyanshuOS', message: '❌ Failed to send. Try email directly.', icon: '⚠️' });
-    } finally {
+*Name:* ${form.name}
+*Email:* ${form.email}
+*Subject:* ${form.subject}
+
+*Message:*
+${form.message}`;
+
+    const waUrl = `https://wa.me/919173150179?text=${encodeURIComponent(waMessage)}`;
+
+    // Small delay for UX feel, then open WhatsApp
+    setTimeout(() => {
+      window.open(waUrl, '_blank');
+      setSent(true);
+      setForm({ name: '', email: '', subject: '', message: '' });
+      addNotification({ title: 'DivyanshuOS', message: '✅ Opening WhatsApp to send your message!', icon: '💬' });
       setSending(false);
-    }
+    }, 600);
   };
 
   return (
@@ -170,7 +172,7 @@ export default function Contact() {
             required
           />
           <button type="submit" className="btn-primary" disabled={sending}>
-            {sending ? 'Sending...' : 'Send Message →'}
+            {sending ? 'Opening WhatsApp...' : '💬 Send via WhatsApp →'}
           </button>
         </motion.form>
       ) : (
@@ -180,9 +182,9 @@ export default function Contact() {
           className="card"
           style={{ textAlign: 'center', padding: '24px' }}
         >
-          <div style={{ fontSize: '32px', marginBottom: '8px' }}>🚀</div>
+          <div style={{ fontSize: '32px', marginBottom: '8px' }}>💬</div>
           <p style={{ fontSize: '13px', color: 'var(--text-primary)', fontWeight: 500 }}>
-            Message sent! Divyanshu will reply within 24 hours.
+            WhatsApp opened! Your message is ready to send to Divyanshu.
           </p>
         </motion.div>
       )}
