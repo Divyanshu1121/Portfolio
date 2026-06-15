@@ -209,29 +209,6 @@ export default function MobileLayout() {
                   <p className={styles.heroRole}>{personalInfo.role}</p>
                   <p className={styles.heroBio}>{bio}</p>
                   
-                  {/* Direct Launch Portfolio Button */}
-                  <button
-                    onClick={() => window.open('/design/index.html', '_blank')}
-                    className={styles.expandBtn}
-                    style={{
-                      marginTop: '16px',
-                      background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))',
-                      color: '#fff',
-                      border: 'none',
-                      textDecoration: 'none',
-                      fontWeight: 600,
-                      fontSize: '13px',
-                      padding: '10px 24px',
-                      width: '100%',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '8px',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    🌐 Open Portfolio Website
-                  </button>
                 </div>
 
                 {/* Stats Grid */}
@@ -249,21 +226,7 @@ export default function MobileLayout() {
 
             {activeTab === 'projects' && (
               <div className={styles.projectsContainer}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                  <h3 className={styles.sectionTitle} style={{ margin: 0 }}>📁 Featured Projects</h3>
-                  <button
-                    onClick={() => window.open('/design/index.html', '_blank')}
-                    className={styles.resumeBtn}
-                    style={{
-                      background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))',
-                      border: 'none',
-                      color: '#fff',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    Open Design Site ↗
-                  </button>
-                </div>
+                <h3 className={styles.sectionTitle} style={{ marginBottom: '12px' }}>📁 Featured Projects</h3>
                 {projects.map((project) => {
                   const isExpanded = expandedProjectId === project.id;
                   return (
