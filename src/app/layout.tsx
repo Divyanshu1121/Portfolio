@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeSyncer } from "./ThemeSyncer";
 
@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     description:
       "Interactive macOS-style portfolio with live AI assistant, terminal, and draggable windows.",
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: '#070710',
 };
 
 export default function RootLayout({

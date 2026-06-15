@@ -74,7 +74,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   padding: 16px 16px;
-  padding-bottom: calc(140px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   -webkit-overflow-scrolling: touch;
 }
 
@@ -143,7 +143,7 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
@@ -805,4 +805,37 @@
   font-weight: 500;
 }
 
+/* ── Responsive tweaks for very small screens ───────────── */
+@media (max-width: 360px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
+  .headerName {
+    font-size: 13px;
+  }
+
+  .headerRole {
+    font-size: 9px;
+  }
+
+  .resumeBtn {
+    font-size: 10px;
+    padding: 4px 7px;
+  }
+
+  .header {
+    padding: 10px 12px;
+    padding-top: calc(10px + env(safe-area-inset-top, 0px));
+  }
+
+  .mainContent {
+    padding: 12px 12px;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ── Prevent horizontal scroll on all screens ───────────── */
+.mobileRoot * {
+  max-width: 100%;
+}
